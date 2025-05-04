@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Minecraft Server Hosting</title>
+  <title>Verdant Hosting</title>
+  <link rel="icon" type="image/png" href="vforverdantsmaller.png">
   <style>
     * {
       box-sizing: border-box;
@@ -21,7 +22,6 @@
       background-attachment: fixed;
     }
 
-    /* Keyframes */
     @keyframes smooth-float {
       0% { transform: translateY(0); }
       50% { transform: translateY(-12px); }
@@ -34,17 +34,14 @@
       100% { transform: scale(1); }
     }
 
-    /* Animation Classes */
     .center-logo-float {
       animation: smooth-float 4s ease-in-out infinite;
     }
 
-.float-pulse {
-  animation: pulse 2.5s ease-in-out infinite;
-}
+    .float-pulse {
+      animation: pulse 2.5s ease-in-out infinite;
+    }
 
-
-    /* Navbar */
     .navbar {
       width: 100%;
       background-color: rgba(18, 19, 26, 0.6);
@@ -80,55 +77,19 @@
       margin-left: auto;
     }
 
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      padding: 10px 15px;
-      font-weight: bold;
-    }
-
-    .navbar a:hover {
-      color: #3fcf8e;
-    }
-
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown-content {
-      opacity: 0;
-      transform: translateY(-10px);
-      pointer-events: none;
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      background-color: #1c1d25;
-      min-width: 200px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    .nav-links a.btn-dashboard {
+      background-color: #3fcf8e;
       border-radius: 8px;
-      z-index: 1000;
-    }
-
-    .dropdown:hover .dropdown-content {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-
-    .dropdown-content a {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 20px;
+      padding: 10px 20px;
       color: white;
+      font-weight: 600;
       text-decoration: none;
-      font-size: 14px;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
-    .dropdown-content a:hover {
-      background-color: #2a2b35;
+    .nav-links a.btn-dashboard:hover {
+      background-color: #35b87d;
+      transform: scale(1.05);
     }
 
     .container {
@@ -158,6 +119,7 @@
       max-width: 600px;
       margin: 0 auto;
       position: relative;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
     }
 
     .plans-section h3 {
@@ -213,7 +175,7 @@
 
     .btn {
       display: inline-block;
-      background-color: #3182f6;
+      background-color: #3fcf8e;
       color: white;
       padding: 12px 24px;
       text-decoration: none;
@@ -228,23 +190,22 @@
       transform: scale(1.07);
     }
 
-.cobblestone-btn .floating-image {
-    position: absolute;
-    top: -70%;
-    right: -75px;
-    width: 180px;
-    height: auto;
-    transform: translateY(-50%) rotate(0deg);
-    pointer-events: none;
-    z-index: 5;
-    cursor: pointer;
-}
-
+    .cobblestone-btn .floating-image {
+      position: absolute;
+      top: -70%;
+      right: -75px;
+      width: 180px;
+      height: auto;
+      transform: translateY(-50%) rotate(0deg);
+      pointer-events: none;
+      z-index: 5;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Top Navigation Bar -->
+  <!-- Navigation Bar -->
   <div class="navbar">
     <div class="logo-wrapper">
       <a href="#">
@@ -252,24 +213,11 @@
       </a>
     </div>
     <div class="nav-links">
-      <a href="#">Control Panel</a>
-      <div class="dropdown">
-        <a href="#">More ▼</a>
-        <div class="dropdown-content">
-          <a href="#"><span>📖</span> Knowledgebase</a>
-          <a href="#"><span>📘</span> Multicraft Knowledgebase</a>
-          <a href="#"><span>📝</span> Blog</a>
-          <a href="#"><span>⚙️</span> Subdomain Creator</a>
-          <a href="#"><span>ℹ️</span> About Us</a>
-          <a href="#"><span>👥</span> Partners</a>
-          <a href="#"><span>🎬</span> Careers</a>
-          <a href="#"><span>❓</span> FAQ</a>
-          <a href="#"><span>✉️</span> Contact Us</a>
-        </div>
-      </div>
+      <a href="https://panel.verdanthosting.com" class="btn-dashboard">Dashboard</a>
     </div>
   </div>
 
+  <!-- Main Content -->
   <div class="container">
     <div class="logo-section center-logo-float">
       <img src="image-removebg-preview (5).png" alt="Main Logo">
@@ -314,8 +262,7 @@
         <img src="image-removebg-preview (6).png" alt="Floating Icon" class="floating-image float-pulse">
       </div>
 
-<a href="https://plans.verdant-hosting.com" class="btn">View All Plans</a>
-
+      <a href="https://plans.verdant-hosting.com" class="btn">View All Plans</a>
     </div>
   </div>
 </body>
