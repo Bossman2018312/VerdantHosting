@@ -1,269 +1,204 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Verdant Hosting</title>
-  <link rel="icon" type="image/png" href="vforverdantsmaller.ico">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+/* Reset and Basics */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    body, html {
-      height: 100%;
-      font-family: 'Segoe UI', sans-serif;
-      color: white;
-      background-color: #0d0e10;
-      background-image: url("testbg.png");
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-    }
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  color: #f2f2f2;
+  background-color: #0d0e10;
+  background-image: url("testbg.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
 
-    @keyframes smooth-float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
-      100% { transform: translateY(0); }
-    }
+/* Animations */
+@keyframes smooth-float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
 
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.07); }
-      100% { transform: scale(1); }
-    }
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.07); }
+  100% { transform: scale(1); }
+}
 
-    .center-logo-float {
-      animation: smooth-float 4s ease-in-out infinite;
-    }
+.center-logo-float {
+  animation: smooth-float 4s ease-in-out infinite;
+}
 
-    .float-pulse {
-      animation: pulse 2.5s ease-in-out infinite;
-    }
+.float-pulse {
+  animation: pulse 2.5s ease-in-out infinite;
+}
 
-    .navbar {
-      width: 100%;
-      background-color: rgba(18, 19, 26, 0.6);
-      backdrop-filter: blur(10px);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 40px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 999;
-    }
+/* Navbar */
+.navbar {
+  width: 100%;
+  background: rgba(18, 19, 26, 0.7);
+  backdrop-filter: blur(12px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
 
-    .navbar .logo-wrapper {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+.navbar .logo-wrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
-    .logo-wrapper img {
-      height: 40px;
-      margin-top: -5px;
-    }
+.logo-wrapper img {
+  height: 42px;
+}
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      margin-left: auto;
-    }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+}
 
-    .nav-links a.btn-dashboard {
-      background-color: #3fcf8e;
-      border-radius: 8px;
-      padding: 10px 20px;
-      color: white;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
+.nav-links a.btn-dashboard {
+  background: linear-gradient(135deg, #42e695 0%, #3fcf8e 100%);
+  border-radius: 8px;
+  padding: 10px 20px;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
 
-    .nav-links a.btn-dashboard:hover {
-      background-color: #35b87d;
-      transform: scale(1.05);
-    }
+.nav-links a.btn-dashboard:hover {
+  background: linear-gradient(135deg, #35b87d 0%, #2eaa6f 100%);
+  transform: scale(1.05);
+}
 
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 120px 20px 60px;
-      text-align: center;
-    }
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 140px 20px 60px;
+  text-align: center;
+}
 
-    .logo-section img {
-      width: 360px;
-      height: auto;
-    }
+.logo-section img {
+  width: 320px;
+  height: auto;
+  margin-bottom: 20px;
+}
 
-    .subtitle {
-      color: #cfcfcf;
-      margin-bottom: 40px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+.subtitle {
+  color: #cfcfcf;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
 
-    .plans-section {
-      background-color: rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
-      padding: 30px;
-      max-width: 600px;
-      margin: 0 auto;
-      position: relative;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    }
+/* Plans Section */
+.plans-section {
+  background-color: rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  padding: 40px 30px;
+  max-width: 640px;
+  margin: 0 auto;
+  box-shadow: 0 0 40px rgba(0,0,0,0.4);
+}
 
-    .plans-section h3 {
-      margin-bottom: 20px;
-      font-size: 24px;
-    }
+.plans-section h3 {
+  margin-bottom: 28px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #ffffff;
+}
 
-    .plan {
-      background-color: rgba(255, 255, 255, 0.07);
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 15px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: transform 0.3s;
-      will-change: transform;
-      cursor: pointer;
-      position: relative;
-    }
+.plan {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s, background-color 0.3s;
+  cursor: pointer;
+}
 
-    .plan:hover {
-      transform: scale(1.03);
-    }
+.plan:hover {
+  transform: scale(1.025);
+  background-color: rgba(255, 255, 255, 0.09);
+}
 
-    .plan-left {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
+.plan-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
 
-    .plan-icon {
-      width: 40px;
-      height: 40px;
-    }
+.plan-icon {
+  width: 40px;
+  height: 40px;
+}
 
-    .plan-title {
-      font-size: 18px;
-      font-weight: bold;
-    }
+.plan-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+}
 
-    .plan-subtitle {
-      font-size: 14px;
-      color: #ccc;
-    }
+.plan-subtitle {
+  font-size: 14px;
+  color: #a5a5a5;
+}
 
-    .price {
-      font-size: 18px;
-      font-weight: bold;
-      color: #3fcf8e;
-      text-align: right;
-    }
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #3fcf8e;
+  text-align: right;
+}
 
-    .btn {
-      display: inline-block;
-      background-color: #3fcf8e;
-      color: white;
-      padding: 12px 24px;
-      text-decoration: none;
-      border-radius: 8px;
-      margin-top: 30px;
-      font-weight: bold;
-      position: relative;
-      transition: transform 0.3s ease;
-    }
+/* CTA Button */
+.btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #42e695 0%, #3fcf8e 100%);
+  color: white;
+  padding: 14px 30px;
+  text-decoration: none;
+  border-radius: 10px;
+  margin-top: 40px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
 
-    .btn:hover {
-      transform: scale(1.07);
-    }
+.btn:hover {
+  transform: scale(1.07);
+  background: linear-gradient(135deg, #35b87d 0%, #2eaa6f 100%);
+}
 
-    .cobblestone-btn .floating-image {
-      position: absolute;
-      top: -70%;
-      right: -75px;
-      width: 180px;
-      height: auto;
-      transform: translateY(-50%) rotate(0deg);
-      pointer-events: none;
-      z-index: 5;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Navigation Bar -->
-  <div class="navbar">
-    <div class="logo-wrapper">
-      <a href="#">
-        <img src="image-removebg-preview (5).png" alt="Home Logo">
-      </a>
-    </div>
-    <div class="nav-links">
-      <a href="https://panel.verdanthosting.com" class="btn-dashboard">Dashboard</a>
-    </div>
-  </div>
-
-  <!-- Main Content -->
-  <div class="container">
-    <div class="logo-section center-logo-float">
-      <img src="image-removebg-preview (5).png" alt="Main Logo">
-    </div>
-
-    <div class="subtitle">Choose from a variety of plans to suit your gameplay needs.</div>
-
-    <div class="plans-section">
-      <h3>Plans</h3>
-
-      <div class="plan">
-        <div class="plan-left">
-          <img src="image-removebg-preview (4).png" class="plan-icon" alt="Dirt">
-          <div>
-            <div class="plan-title">Grass</div>
-            <div class="plan-subtitle">2+ Players ・ 614MB RAM</div>
-          </div>
-        </div>
-        <div class="price">$2.99<br><span style="font-size: 12px;">/monthly</span></div>
-      </div>
-
-      <div class="plan">
-        <div class="plan-left">
-          <img src="image-removebg-preview (2).png" class="plan-icon" alt="Cobblestone">
-          <div>
-            <div class="plan-title">Wood</div>
-            <div class="plan-subtitle">6+ Players ・ 1GB RAM</div>
-          </div>
-        </div>
-        <div class="price">$5.99<br><span style="font-size: 12px;">/monthly</span></div>
-      </div>
-
-      <div class="plan cobblestone-btn">
-        <div class="plan-left">
-          <img src="image-removebg-preview (3).png" class="plan-icon" alt="Redstone">
-          <div>
-            <div class="plan-title">Cobblestone</div>
-            <div class="plan-subtitle">15+ Players ・ 2GB RAM</div>
-          </div>
-        </div>
-        <div class="price">$11.99<br><span style="font-size: 12px;">/monthly</span></div>
-        <img src="image-removebg-preview (6).png" alt="Floating Icon" class="floating-image float-pulse">
-      </div>
-
-      <a href="https://plans.verdant-hosting.com" class="btn">View All Plans</a>
-    </div>
-  </div>
-</body>
-</html>
+/* Floating Icon */
+.cobblestone-btn .floating-image {
+  position: absolute;
+  top: -70%;
+  right: -75px;
+  width: 180px;
+  height: auto;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 5;
+}
