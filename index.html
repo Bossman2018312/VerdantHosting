@@ -12,7 +12,7 @@
       box-sizing: border-box;
     }
 
-    body, html {
+    html, body {
       height: 100%;
       font-family: 'Poppins', sans-serif;
       color: #fff;
@@ -24,9 +24,9 @@
       top: 0;
       left: 0;
       width: 100%;
-      padding: 16px 40px;
       background: rgba(18, 19, 26, 0.7);
       backdrop-filter: blur(12px);
+      padding: 16px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -221,8 +221,8 @@
       <span id="admin-label">Admin Account</span>
     </div>
     <div class="nav-links">
-      <a href="https://panel.verdanthosting.com">Dashboard</a>
-      <a href="https://panel.verdanthosting.com/admin" id="admin-panel-btn" style="display: none;">Admin Panel</a>
+      <a href="https://panel.verdant-hosting.com">Dashboard</a>
+      <a href="https://panel.verdant-hosting.com/admin" id="admin-panel-btn" style="display: none;">Admin Panel</a>
     </div>
   </div>
 
@@ -290,9 +290,6 @@
         showAdminFeatures();
       }
     });
-
-    // You can test it by running this once in the browser dev tools:
-    // localStorage.setItem("isAdmin", "true");
   </script>
 </body>
 </html>
