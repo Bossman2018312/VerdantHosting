@@ -36,10 +36,21 @@
     .logo-wrapper {
       display: flex;
       align-items: center;
+      gap: 20px;
     }
 
     .logo-wrapper img {
       height: 42px;
+    }
+
+    #admin-label {
+      background-color: #2e2f3a;
+      padding: 6px 14px;
+      border-radius: 8px;
+      color: #3fcf8e;
+      font-weight: 600;
+      font-size: 14px;
+      display: none;
     }
 
     .nav-links {
@@ -61,16 +72,6 @@
     .nav-links a:hover {
       background: #35b87d;
       transform: scale(1.05);
-    }
-
-    #admin-label {
-      padding: 10px 20px;
-      background-color: #2e2f3a;
-      border-radius: 8px;
-      font-weight: 600;
-      font-family: 'Poppins', sans-serif;
-      color: #3fcf8e;
-      display: none;
     }
 
     .container {
@@ -217,10 +218,11 @@
   <div class="navbar">
     <div class="logo-wrapper">
       <a href="#"><img src="image-removebg-preview (5).png" alt="Verdant Hosting Logo"></a>
+      <span id="admin-label">Admin Account</span>
     </div>
     <div class="nav-links">
       <a href="https://panel.verdanthosting.com">Dashboard</a>
-      <span id="admin-label">Admin Account</span>
+      <a href="https://panel.verdanthosting.com/admin" id="admin-panel-btn" style="display: none;">Admin Panel</a>
     </div>
   </div>
 
@@ -276,24 +278,21 @@
     &copy; 2025 Verdant Hosting. All rights reserved.
   </footer>
 
-  <!-- Admin Logic -->
+  <!-- Admin Logic Script -->
   <script>
-    // Simulate a previous admin grant
-    // Set this manually in dev tools or once from a different script:
-    // localStorage.setItem("isAdmin", "true");
-
-    function showAdminLabel() {
-      const label = document.getElementById("admin-label");
-      if (label) {
-        label.style.display = "inline-block";
-      }
+    function showAdminFeatures() {
+      document.getElementById("admin-label").style.display = "inline-block";
+      document.getElementById("admin-panel-btn").style.display = "inline-block";
     }
 
     window.addEventListener("DOMContentLoaded", () => {
       if (localStorage.getItem("isAdmin") === "true") {
-        showAdminLabel();
+        showAdminFeatures();
       }
     });
+
+    // You can test it by running this once in the browser dev tools:
+    // localStorage.setItem("isAdmin", "true");
   </script>
 </body>
 </html>
