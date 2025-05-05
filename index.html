@@ -64,10 +64,12 @@
     }
 
     #admin-label {
-      margin-left: 10px;
-      color: #3fcf8e;
+      padding: 10px 20px;
+      background-color: #2e2f3a;
+      border-radius: 8px;
       font-weight: 600;
       font-family: 'Poppins', sans-serif;
+      color: #3fcf8e;
       display: none;
     }
 
@@ -222,24 +224,6 @@
     </div>
   </div>
 
-  <!-- Give Admin Button -->
-  <div style="text-align: center; margin-top: 100px;">
-    <button onclick="grantAdmin()" style="
-      background-color: #3fcf8e;
-      color: white;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 8px;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      font-size: 16px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-      Give Admin
-    </button>
-  </div>
-
   <!-- Main Content -->
   <div class="container">
     <div class="logo-section">
@@ -292,21 +276,19 @@
     &copy; 2025 Verdant Hosting. All rights reserved.
   </footer>
 
-  <!-- Admin Script -->
+  <!-- Admin Logic -->
   <script>
-    function grantAdmin() {
-      localStorage.setItem("isAdmin", "true");
-      showAdminLabel();
-    }
+    // Simulate a previous admin grant
+    // Set this manually in dev tools or once from a different script:
+    // localStorage.setItem("isAdmin", "true");
 
     function showAdminLabel() {
       const label = document.getElementById("admin-label");
       if (label) {
-        label.style.display = "inline";
+        label.style.display = "inline-block";
       }
     }
 
-    // Run on page load
     window.addEventListener("DOMContentLoaded", () => {
       if (localStorage.getItem("isAdmin") === "true") {
         showAdminLabel();
