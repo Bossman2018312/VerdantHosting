@@ -42,6 +42,12 @@
       height: 42px;
     }
 
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
     .nav-links a {
       text-decoration: none;
       background: #3fcf8e;
@@ -55,6 +61,14 @@
     .nav-links a:hover {
       background: #35b87d;
       transform: scale(1.05);
+    }
+
+    #admin-label {
+      margin-left: 10px;
+      color: #3fcf8e;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      display: none;
     }
 
     .container {
@@ -204,10 +218,29 @@
     </div>
     <div class="nav-links">
       <a href="https://panel.verdanthosting.com">Dashboard</a>
+      <span id="admin-label">Admin Account</span>
     </div>
   </div>
 
-  <!-- Main Container -->
+  <!-- Give Admin Button -->
+  <div style="text-align: center; margin-top: 100px;">
+    <button onclick="grantAdmin()" style="
+      background-color: #3fcf8e;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      Give Admin
+    </button>
+  </div>
+
+  <!-- Main Content -->
   <div class="container">
     <div class="logo-section">
       <img src="image-removebg-preview (5).png" alt="Main Logo">
@@ -258,5 +291,27 @@
   <footer>
     &copy; 2025 Verdant Hosting. All rights reserved.
   </footer>
+
+  <!-- Admin Script -->
+  <script>
+    function grantAdmin() {
+      localStorage.setItem("isAdmin", "true");
+      showAdminLabel();
+    }
+
+    function showAdminLabel() {
+      const label = document.getElementById("admin-label");
+      if (label) {
+        label.style.display = "inline";
+      }
+    }
+
+    // Run on page load
+    window.addEventListener("DOMContentLoaded", () => {
+      if (localStorage.getItem("isAdmin") === "true") {
+        showAdminLabel();
+      }
+    });
+  </script>
 </body>
 </html>
